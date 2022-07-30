@@ -15,11 +15,11 @@ For example, following test is made for testing input 01011:
     
     print ("sequence detector test case")
 
-    assert dut.seq_seen.value == 1, f"Adder result is incorrect: {dut.seq_seen.value}!=1"
+    assert dut.seq_seen.value == 1, f"Sequence Detector result is incorrect: {dut.seq_seen.value}!=1"
 
 ```
 Following error is obtained:
-assert dut.seq_seen.value == 1, f"Adder result is incorrect: {dut.seq_seen.value}!=1"
+assert dut.seq_seen.value == 1, f"Sequence Detector result is incorrect: {dut.seq_seen.value}!=1"
                      AssertionError: Adder result is incorrect: 0!=1
 
 ## Test Scenario 
