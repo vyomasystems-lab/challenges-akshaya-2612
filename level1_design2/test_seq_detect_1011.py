@@ -24,3 +24,18 @@ async def test_seq_bug1(dut):
     await FallingEdge(dut.clk)
 
     cocotb.log.info('#### CTB: Develop your test here! ######')
+     dut.inp_bit.value=1
+    await Timer(1,'ns')
+    dut.inp_bit.value=1
+    await Timer(1,'ns')
+    dut.inp_bit.value=0
+    await Timer(1,'ns')
+    dut.inp_bit.value=1
+    await Timer(1,'ns')
+    dut.inp_bit.value=1
+    await Timer(1,'ns')
+
+    print ("sequence detector test case")
+
+    assert dut.seq_seen.value == 1, f"Sequence Detector result is incorrect: {dut.seq_seen.value}!=1"
+
