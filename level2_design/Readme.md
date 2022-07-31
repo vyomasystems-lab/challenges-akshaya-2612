@@ -40,28 +40,11 @@ For example, following test is made for testing input:
 Following error is obtained:
 assert dut_output == expected_mav_putvalue, error_message
                      AssertionError: Value mismatch DUT = 0xa does not match MODEL = 0x0
-### Bug 2:
-For example, following test is made for testing:
-```
-    dut.inp30.value =1
-    dut.sel.value = 30
-    await Timer(1,'ns')
-    assert dut.out.value==1 , f"Result is Incorrect : {dut.out.value}!= 1"
-
-```
-Following error is obtained:
-assert dut.out.value==1 , f"Result is Incorrect : {dut.out.value}!= 1"
-AssertionError: Result is Incorrect : 00!= 1
 
 ## Test Scenario 
 ### Bug 1:
 - Test inputs: mav_putvalue_src1 = 0x5, mav_putvalue_src2 = 0x2, mav_putvalue_src3 = 0x4, mav_putvalue_instr = 0x101010B3
 - Expected Output: out= 0x0
 - Observed Output in the DUT dut.out= 0xa
-Output mismatches for the above inputs proving that there is a design bug.
 
-### Bug 2:
-- Test inputs : inp30=1,sel=30
-- Expected Output: out=01
-- Observed Output in the DUT dut.out = 00
 Output mismatches for the above inputs proving that there is a design bug.
